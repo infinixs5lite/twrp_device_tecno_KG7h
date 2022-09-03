@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/tecno/TECNO-KG7h
+DEVICE_PATH := device/tecno/KG7h
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -15,15 +15,23 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a55
+
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT := cortex-a55
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
+
+# Recovery
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+BOARD_USES_RECOVERY_AS_BOOT := true
+TARGET_NO_RECOVERY := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+TW_HAS_NO_RECOVERY_PARTITION := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := TECNO-KG7h
@@ -33,7 +41,7 @@ TARGET_BOOTLOADER_BOARD_NAME := CY-KG7H-H6511-C
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
-#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432 # This is the maximum known partition size, but it can be higher, so we just omit it
+BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 # This is the maximum known partition size, but it can be higher, so we just omit it
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -43,12 +51,14 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    boot \
-    system \
-    vendor
 
 TW_INCLUDE_REPACKTOOLS := true
+
+# Dynamic Partition
+BOARD_SUPER_PARTITION_SIZE := 7130316800
+BOARD_SUPER_PARTITION_GROUPS := main
+BOARD_MAIN_PARTITION_LIST := system system_ext vendor product
+BOARD_MAIN_SIZE := 7130316800
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
@@ -77,6 +87,9 @@ TARGET_BOARD_PLATFORM := mt6765
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
+
+# MTK
+BOARD_USES_MTK_HARDWARE := true
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
