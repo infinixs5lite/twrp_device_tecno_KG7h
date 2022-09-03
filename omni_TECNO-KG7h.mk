@@ -6,20 +6,19 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Inherit from TECNO-KG7h device
+# Inherit from KG7h device
 $(call inherit-product, device/tecno/TECNO-KG7h/device.mk)
 
 # Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := TECNO-KG7h
-PRODUCT_NAME := omni_TECNO-KG7h
+PRODUCT_DEVICE := KG7h
+PRODUCT_NAME := twrp_KG7h
 PRODUCT_BRAND := TECNO
-PRODUCT_MODEL := TECNO KG7h
+PRODUCT_MODEL := TECNO Spark 8P
 PRODUCT_MANUFACTURER := tecno
