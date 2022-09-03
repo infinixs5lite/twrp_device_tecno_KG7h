@@ -52,6 +52,10 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # A/B
 AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vendor
 
 TW_INCLUDE_REPACKTOOLS := true
 
