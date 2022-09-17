@@ -72,11 +72,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
-# Workaround for copying error vendor files to recovery ramdisk
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_SYSTEM_EXT = system_ext
-
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
