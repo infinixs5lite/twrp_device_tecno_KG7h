@@ -15,11 +15,11 @@ $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
 $(call inherit-product, device/tecno/KG7h/device.mk)
 
 # Inherit some common Omni stuff.
-$(call inherit-product, vendor/pb/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := KG7h
-PRODUCT_NAME := omni_KG7h
+PRODUCT_NAME := twrp_KG7h
 PRODUCT_BRAND := TECNO
 PRODUCT_MODEL := TECNO Spark 8P
 PRODUCT_MANUFACTURER := tecno
