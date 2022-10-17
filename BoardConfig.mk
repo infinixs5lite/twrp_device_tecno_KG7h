@@ -106,8 +106,7 @@ BOARD_MAIN_PARTITION_LIST := system system_ext vendor product
 BOARD_MAIN_SIZE := 7130316800
 
 # Kernel
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
-BOARD_KERNEL_CMDLINE += androidboot.selinux=enforcing
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.force_normal_boot=1
 BOARD_KERNEL_SEPERATED_DTBO := true
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
