@@ -22,3 +22,7 @@ PRODUCT_NAME := twrp_KG7h
 PRODUCT_BRAND := TECNO
 PRODUCT_MODEL := TECNO Spark 8P
 PRODUCT_MANUFACTURER := tecno
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock
