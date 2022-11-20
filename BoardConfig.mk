@@ -143,6 +143,9 @@ PLATFORM_VERSION := 16.1.0
 # MTK
 BOARD_USES_MTK_HARDWARE := true
 
+# TW Version
+TW_DEVICE_VERSION := Made by Chinedu
+
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := false
