@@ -30,6 +30,9 @@ product             /product         ext4      ro     wait,slotselect,avb,logica
 /vbmeta_system   emmc    /dev/block/by-name/vbmeta_system      flags=backup=1;display="vbmeta_system";flashimg=1;slotselect
 /vbmeta_vendor   emmc    /dev/block/by-name/vbmeta_vendor      flags=backup=1;display="vbmeta_vendor";flashimg=1;slotselect
 
+#Internal Storage
+/storage        ext4   /data/media/0                                             flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
+
 # MediaTek partitions
 /bootloader         emmc       /dev/block/by-name/lk              flags=backup=1;display="Bootloader (lk)";flashimg=1;slotselect
 /logo		    emmc	/dev/block/by-name/logo             flags=display="logo";backup=1;flashimg=1
