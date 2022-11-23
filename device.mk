@@ -34,6 +34,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.mt6765
 
+#MTK Decryption
+PRODUCT_PACKAGES += \
+    mtk_decrypt \
+    mtk_decrypt_fbe
+
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
