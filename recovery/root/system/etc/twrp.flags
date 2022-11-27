@@ -28,8 +28,8 @@ product             /product         ext4      ro     wait,slotselect,avb,logica
 /vbmeta		 emmc	 /dev/block/by-name/vbmeta             flags=display="vbmeta";backup=1;flashimg=1;slotselect
 /vbmeta_system   emmc    /dev/block/by-name/vbmeta_system      flags=backup=1;display="vbmeta_system";flashimg=1;slotselect
 /vbmeta_vendor   emmc    /dev/block/by-name/vbmeta_vendor      flags=backup=1;display="vbmeta_vendor";flashimg=1;slotselect
-/otp            emmc    /dev/block/by-name/otp               flags=backup=1;display="otp";flashimg=1
-/Product            emmc    /dev/block/by-name/Product               flags=backup=1;display="Product";flashimg=1;slotselect
+/otp            ext4    /dev/block/by-name/otp               flags=backup=1;display="otp";flashimg=1
+/Product            ext4    /dev/block/by-name/Product               flags=backup=1;display="Product";flashimg=1;slotselect
 /flashinfo            emmc    /dev/block/by-name/flashinfo               flags=backup=1;display="Flashinfo";flashimg=1
 
 
