@@ -28,6 +28,10 @@ product             /product         ext4      ro     wait,slotselect,avb,logica
 /vbmeta		 emmc	 /dev/block/by-name/vbmeta             flags=display="vbmeta";backup=1;flashimg=1;slotselect
 /vbmeta_system   emmc    /dev/block/by-name/vbmeta_system      flags=backup=1;display="vbmeta_system";flashimg=1;slotselect
 /vbmeta_vendor   emmc    /dev/block/by-name/vbmeta_vendor      flags=backup=1;display="vbmeta_vendor";flashimg=1;slotselect
+/otp            emmc    /dev/block/by-name/otp               flags=backup=1;display="otp";flashimg=1
+/Product            emmc    /dev/block/by-name/Product               flags=backup=1;display="Product";flashimg=1;slotselect
+/flashinfo            emmc    /dev/block/by-name/flashinfo               flags=backup=1;display="Flashinfo";flashimg=1
+
 
 #Internal Storage
 /storage        ext4   /data/media/0                                             flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
@@ -35,17 +39,17 @@ product             /product         ext4      ro     wait,slotselect,avb,logica
 # MediaTek partitions
 /bootloader         emmc       /dev/block/by-name/lk              flags=backup=1;display="Bootloader (lk)";flashimg=1;slotselect
 /logo		    emmc	/dev/block/by-name/logo             flags=display="logo";backup=1;flashimg=1
-/seccfg		    emmc	/dev/block/by-name/seccfg           flags=display="SecCfg";backup=1
-/proinfo	    emmc	/dev/block/by-name/proinfo          flags=display="Proinfo";backup=1
+/seccfg		    emmc	/dev/block/by-name/seccfg           flags=display="SecCfg";backup=1;flashimg=1
+/proinfo	    emmc	/dev/block/by-name/proinfo          flags=display="Proinfo";backup=1;flashimg=1
 
 # Non-Volatile (RAM | DATA | CFG)
-/nvcfg		    ext4	/dev/block/by-name/nvcfg            flags=display="NvCfg";backup=1
-/nvdata		    ext4	/dev/block/by-name/nvdata           flags=display="NvData";backup=1
+/nvcfg		    ext4	/dev/block/by-name/nvcfg            flags=display="NvCfg";backup=1;flashimg=1
+/nvdata		    ext4	/dev/block/by-name/nvdata           flags=display="NvData";backup=1;flashimg=1
 /nvram		    emmc	/dev/block/by-name/nvram            flags=display="NvRam";backup=1;flashimg=1
 
 # Subscriber Identification Module (SIM)
-/protect_f	    ext4	/dev/block/by-name/protect1         flags=display="Protect";backup=1
-/protect_s	    ext4	/dev/block/by-name/protect2         flags=backup=1;subpartitionof=/protect_f
+/protect_f	    ext4	/dev/block/by-name/protect1         flags=display="Protect";backup=1;flashimg=1
+/protect_s	    ext4	/dev/block/by-name/protect2         flags=backup=1;subpartitionof=/protect_f;flashimg=1
 
 # Trusted Execution Environment (TEE) - trustzone
 /tee		    emmc	/dev/block/by-name/tee             flags=display="Tee";backup=1;flashimg=1;slotselect
@@ -54,7 +58,7 @@ product             /product         ext4      ro     wait,slotselect,avb,logica
 /persistent	    emmc	/dev/block/by-name/frp              flags=display="frp";backup=1;flashimg=1
 
 # Firmware
-/gz            emmc    /dev/block/by-name/gz               flags=display="gz";backup=1;slotselect
+/gz            emmc    /dev/block/by-name/gz               flags=display="gz";backup=1;flashimg=1;slotselect
 
 # Modem
 /md1img		    emmc	/dev/block/by-name/md1img           flags=display="md1img";backup=1;flashimg=1;slotselect
