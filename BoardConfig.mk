@@ -33,6 +33,9 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
+#Enable HW based full disk encryption
+TARGET_HW_DISK_ENCRYPTION := false
+
 # Crypto
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
@@ -132,8 +135,6 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/tecno/KG7h
-TARGET_KERNEL_CONFIG := KG7h_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
@@ -149,7 +150,7 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 BOARD_USES_MTK_HARDWARE := true
 
 # TW Version
-TW_DEVICE_VERSION := Made by Chinedu
+TW_DEVICE_VERSION := Made by Chinedu tm 09039121780
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
