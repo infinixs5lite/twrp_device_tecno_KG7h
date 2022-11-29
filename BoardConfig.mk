@@ -33,9 +33,6 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
-#Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := false
-
 # Crypto
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
@@ -155,6 +152,8 @@ TW_DEVICE_VERSION := Made by Chinedu tm 09039121780
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := false
+TW_DECRYPTION_DEFAULT_PASSWORD :=1220
+TW_NO_SCREEN_TIMEOUT := true
 TW_DEFAULT_LANGUAGE := en
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
