@@ -41,11 +41,28 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
+# mtk encryption
+PRODUCT_PACKAGES += \
+    mtk_decrypt \
+    mtk_decrypt_fbe
+
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
 
 # Health Hal
 PRODUCT_PACKAGES += \
      android.hardware.health@2.1-impl \
      android.hardware.health@2.1-service
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.crypto.allow_encrypt_override=true \
+	ro.crypto.dm_default_key.options_format.version=2 \
+	ro.crypto.volume.filenames_mode=aes-256-cts \
+	ro.crypto.volume.metadata.method=dm-default-key \
+	ro.crypto.volume.options=::v2
