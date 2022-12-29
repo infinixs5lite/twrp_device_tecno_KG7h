@@ -27,22 +27,11 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
-
 # Crypto
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 BOARD_USES_METADATA_PARTITION := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
-
-# Additional binaries & libraries needed for recovery
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
-    libpuresoftkeymasterdevice
 
 # AVB
 BOARD_AVB_ENABLE := true
@@ -67,7 +56,7 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/twrp.flags
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := TECNO-KG7h
@@ -100,9 +89,6 @@ AB_OTA_PARTITIONS += \
     vendor
 
 TW_INCLUDE_REPACKTOOLS := true
-
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Dynamic Partition
 BOARD_SUPER_PARTITION_SIZE := 7130316800
