@@ -16,6 +16,11 @@ PRODUCT_PACKAGES_DEBUG += \
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := current
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
