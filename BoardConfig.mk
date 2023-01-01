@@ -27,15 +27,6 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
-TWRP_NEW_THEME := true
-#TW_CUSTOM_THEME  := /some/path/
-
-# Crypto
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-BOARD_USES_METADATA_PARTITION := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-
 # AVB
 BOARD_AVB_ENABLE := true
 BOARD_AVB_VBMETA_SYSTEM := system product
@@ -64,6 +55,8 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 # Assert
 TARGET_OTA_ASSERT_DEVICE := TECNO-KG7h
 
+TARGET_COPY_OUT_VENDOR := vendor
+
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := CY-KG7H-H6511-C
@@ -84,18 +77,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
-# Additional binaries & libraries needed for recovery
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
-    libpuresoftkeymasterdevice \
-    ashmemd_aidl_interface-cpp \
-    libashmemd_client
-
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
-
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
@@ -104,6 +85,9 @@ AB_OTA_PARTITIONS += \
     vendor
 
 TW_INCLUDE_REPACKTOOLS := true
+
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Dynamic Partition
 BOARD_SUPER_PARTITION_SIZE := 7130316800
@@ -135,10 +119,14 @@ TARGET_KERNEL_CONFIG := TECNO-KG7h_defconfig
 TARGET_BOARD_PLATFORM := mt6765
 PRODUCT_PLATFORM := mt6765
 
+# Metadata
+BOARD_USES_METADATA_PARTITION := true
+
 # Encryption
 PLATFORM_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 99.87.36
+PLATFORM_VERSION := 16.1.0
 VENDOR_SECURITY_PATCH := 2099-12-31
+
 # MTK
 BOARD_USES_MTK_HARDWARE := true
 
