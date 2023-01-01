@@ -25,3 +25,8 @@ PRODUCT_BRAND := tecno
 PRODUCT_MODEL := KG7h
 PRODUCT_MANUFACTURER := Tecno Mobility Limited
 PRODUCT_RELEASE_NAME := Tecno Spark 8P
+
+# HACK: Set older build date
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bootimage.build.date.utc=0 \
+    ro.build.date.utc=0
