@@ -10,11 +10,8 @@ LOCAL_PATH := device/tecno/KG7h
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
-
 # VNDK
-PRODUCT_TARGET_VNDK_VERSION := current
+PRODUCT_TARGET_VNDK_VERSION := 30
 
 # Fastbootd
 PRODUCT_PACKAGES += \
