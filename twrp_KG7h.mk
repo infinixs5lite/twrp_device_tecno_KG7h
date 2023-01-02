@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Inherit from selene device
+# Inherit from KG7h device
 $(call inherit-product, device/tecno/KG7h/device.mk)
 
 # Inherit some common twrp stuff.
@@ -25,8 +25,3 @@ PRODUCT_BRAND := tecno
 PRODUCT_MODEL := KG7h
 PRODUCT_MANUFACTURER := Tecno Mobility Limited
 PRODUCT_RELEASE_NAME := Tecno Spark 8P
-
-# HACK: Set older build date
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bootimage.build.date.utc=0 \
-    ro.build.date.utc=0
