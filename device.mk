@@ -36,10 +36,6 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
-# mtk encryption
-PRODUCT_PACKAGES += \
-    mtk_decrypt \
-    mtk_decrypt_fbe
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
