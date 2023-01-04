@@ -25,8 +25,6 @@ import /vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
 import /vendor/etc/init/microtrust.rc
 #import /system/etc/init/keystore.rc
 
-
-
 service servicemanager /system/bin/servicemanager
     user root
     group root readproc
@@ -50,6 +48,8 @@ on fs
     install_keyring
     setprop crypto.ready 1
     start servicemanager
+
+service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service.trustonic
 
 on property:hwservicemanager.ready=true
     start teei_daemon
