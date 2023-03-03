@@ -134,12 +134,6 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     ashmemd_aidl_interface-cpp \
     libashmemd_client
 
-RECOVERY_LIBRARY_SOURCE_FILES += \
-
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
-
 # Decryption
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
