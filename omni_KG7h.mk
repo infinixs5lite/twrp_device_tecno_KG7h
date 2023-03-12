@@ -26,12 +26,3 @@ PRODUCT_MODEL := KG7h
 PRODUCT_MANUFACTURER := Tecno Mobility Limited
 PRODUCT_RELEASE_NAME := Tecno Spark 8P
 
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31 \
-    ro.bootimage.build.date.utc=0 \
-    ro.build.date.utc=0
-
-# Fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock
