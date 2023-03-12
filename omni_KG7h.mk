@@ -25,4 +25,3 @@ PRODUCT_BRAND := tecno
 PRODUCT_MODEL := KG7h
 PRODUCT_MANUFACTURER := Tecno Mobility Limited
 PRODUCT_RELEASE_NAME := Tecno Spark 8P
-
