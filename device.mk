@@ -21,6 +21,11 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
     android.hardware.boot@1.0-service
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    Fastbootd
+
 PRODUCT_PACKAGES += \
     bootctrl.mt6765
 
