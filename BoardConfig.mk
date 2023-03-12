@@ -134,9 +134,12 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     ashmemd_aidl_interface-cpp \
     libashmemd_client
 
-# Decryption
+# Crypto
 TW_INCLUDE_CRYPTO := true
+TW_USE_FSCRYPT_POLICY := 1
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_INCLUDE_CRYPTO_FBE := true
+
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
@@ -173,3 +176,7 @@ TW_NO_HAPTICS := true
 TW_Y_OFFSET := 115
 TW_H_OFFSET := -115
 TW_DEVICE_VERSION := build by Chinedu 09039121780
+
+# PB Torch
+PB_TORCH_PATH := "/sys/devices/virtual/torch/_level"
+PB_TORCH_MAX_BRIGHTNESS := 1
