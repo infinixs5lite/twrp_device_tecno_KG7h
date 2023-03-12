@@ -177,6 +177,6 @@ TW_Y_OFFSET := 115
 TW_H_OFFSET := -115
 TW_DEVICE_VERSION := build by Chinedu 09039121780
 
-# PB Torch
-PB_TORCH_PATH := "/sys/devices/virtual/torch/_level"
-PB_TORCH_MAX_BRIGHTNESS := 1
+# TW Torch
+TW_TORCH_PATH := "/sys/devices/virtual/torch/_level"
+TW_TORCH_MAX_BRIGHTNESS := 1
