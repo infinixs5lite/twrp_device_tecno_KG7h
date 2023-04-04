@@ -19,14 +19,23 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.1-mtkimpl.recovery \
+    android.hardware.boot@1.1-mtkimpl
 
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     Fastbootd
 
+# MTK Plpath Utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils.recovery
+
 PRODUCT_PACKAGES += \
     bootctrl.mt6765
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -35,6 +44,5 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
-
 PRODUCT_PACKAGES_DEBUG += \
-    bootctl
+    bootctrl
