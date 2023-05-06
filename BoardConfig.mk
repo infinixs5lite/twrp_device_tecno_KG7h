@@ -165,3 +165,14 @@ TW_NO_HAPTICS := true
 TW_Y_OFFSET := 115
 TW_H_OFFSET := -115
 TW_DEVICE_VERSION := build by Chinedu 09039121780
+
+# pbrp flags
+PB_GO := TRUE
+
+# PBRP specific build flags
+PB_DISABLE_DEFAULT_TREBLE_COMP := true 
+PB_DISABLE_DEFAULT_DM_VERITY := true
+
+# PB Torch
+PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
+PB_TORCH_MAX_BRIGHTNESS := 1
